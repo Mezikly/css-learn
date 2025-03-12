@@ -1,0 +1,51 @@
+/*CSS学习*/
+/* 这是注释 */
+/*单独CSS文件内不需要style标签，直接书写即可*/
+p{
+    font-size: large;
+    background-color: saddlebrown;
+}
+/* 声明的值必须是属性对应的,否则整条声明无效 */
+    Unkown property/* 属性名未知，即属性名写错 */
+    invalid value/* 属性值无效，即属性值写错 */
+    
+    
+
+
+    
+    /* 选择器 */
+        
+        /* 标签/元素选择器element{rules;} */
+            /* p、h1、h2......div、span...... */
+            /* 类(class)选择器与id选择器.class{rules;}与#id{rules;} */
+                /* 类选择器.class{rules;} */
+                    <div class=xxx ooo iii></div>
+                    <div class=xxx ppp eee></div>
+                    <div class=xxx></div>
+                    ......
+                    .xxx {
+                        rules;
+                        }/*这个类选择器选择了所有类别(class)中有单词xxx的元素/标签，即选中了上述所有div标签*/
+                        /* 优先级同html一样是子元素>父元素 */
+                        <div class=aaa><p class=bbb></p></div>
+                        .aaa {
+                            color:green;
+                            }
+                        .bbb {
+                            color:red;
+                            }/*此时p内容文字颜色是red，div内容除开p部分的文字颜色才是green*/
+                /*id选择器#id{rules;},标签的id唯一，所以此选择器只能选择一个标签/元素*/
+                /* 想要选择多数标签用类选择器且给标签起多个类名再类选择器实现多样选择，不要用id选择器 */
+        /* 属性选择器 [property=value]{rules}*/
+        <header role="banner">XXXXXXX</header>
+        [role="banner"]{text-decorationg:underline;}/*此选择器选中了所有role属性的属性值为role=banner的标签/元素*/
+                /* 属性选择器还有不同写法表示不同选择方法(符号^$*~|) */
+                [role^="banner"]{}/*符号^表示开始，即此选择器选中的标签是任意含有role属性且role属性的属性值是以banner开头的标签*/
+                [role$="banner"]{}/*符号$表示结尾*/
+                [role*="banner"]{}/*符号*表示任意，即role属性的属性值任意位置出现过banner即也可以是单词的一部分如something-banner-something*/
+                [role~="banner"]{}/*符号~表示但凡即可，即role属性的属性值中存在单独单词banner即可，不可是其他单词的一部分即banner两边要有空格*/
+                [role|="banner"]{}/*符号|即vertical bar竖杠，选中的是role属性的属性值是banner或banner-开头的标签/属性，一般用在lang标签，因为常有英国英语lang="en"或美国英语lang="en-US"此时[lang|="en"]即可都选中他们*/
+                                /*[role|="banner"]完全等效于[role="banner"]{}和[role^="banner-"]{}两个一起用*/
+                [property="value"i]{}/*选择器末尾的i表示不区分大小写*/
+        /*伪类选择器(通过隐藏信息选中元素)*/
+        
