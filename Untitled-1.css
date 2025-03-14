@@ -8,17 +8,17 @@ p{
 /* 声明的值必须是属性对应的,否则整条声明无效 */
     Unkown property/* 属性名未知，即属性名写错 */
     invalid value/* 属性值无效，即属性值写错 */
-    
-    
+
+
 
 
     
-    /* 选择器 */
+    选择器
         
-        /* 标签/元素选择器element{rules;} */
+        标签/元素选择器element{rules;}
             /* p、h1、h2......div、span...... */
             /* 类(class)选择器与id选择器.class{rules;}与#id{rules;} */
-                /* 类选择器.class{rules;} */
+                类选择器.class{rules;}
                     <div class=xxx ooo iii></div>
                     <div class=xxx ppp eee></div>
                     <div class=xxx></div>
@@ -34,9 +34,9 @@ p{
                         .bbb {
                             color:red;
                             }/*此时p内容文字颜色是red，div内容除开p部分的文字颜色才是green*/
-                /*id选择器#id{rules;},标签的id唯一，所以此选择器只能选择一个标签/元素*/
+                id选择器#id{rules;},标签的id唯一,所以此选择器只能选择一个标签/元素
                 /* 想要选择多数标签用类选择器且给标签起多个类名再类选择器实现多样选择，不要用id选择器 */
-        /* 属性选择器 [property=value]{rules}*/
+        属性选择器 [property=value]{rules}
         <header role="banner">XXXXXXX</header>
         [role="banner"]{text-decorationg:underline;}/*此选择器选中了所有role属性的属性值为role=banner的标签/元素*/
                 /* 属性选择器还有不同写法表示不同选择方法(符号^$*~|) */
@@ -47,5 +47,45 @@ p{
                 [role|="banner"]{}/*符号|即vertical bar竖杠，选中的是role属性的属性值是banner或banner-开头的标签/属性，一般用在lang标签，因为常有英国英语lang="en"或美国英语lang="en-US"此时[lang|="en"]即可都选中他们*/
                                 /*[role|="banner"]完全等效于[role="banner"]{}和[role^="banner-"]{}两个一起用*/
                 [property="value"i]{}/*选择器末尾的i表示不区分大小写*/
-        /*伪类选择器(通过隐藏信息选中元素)*/
+        伪类选择器(通过隐藏信息选中元素)
+            交互伪类
+                :hover{}/* 只要是被鼠标悬浮的元素. */
+                :active{}/* 鼠标按住的元素 */
+                :focus{}/* 焦点所在的元素 */
+            链接伪类
+                :link{}/* 选中未被访问过的链接元素 */
+                :visited{}/* 选中被访问过的元素 */
+            隐含条件伪类
+                :first-child{}/* 选中任何元素第一个子元素 */
+                :last-child{}/* 选中任何元素最后一个子元素 */
+                :nth-child(2){}/* 选中任何元素的第2个子元素/子结点，同理有nth-child(3)、nth-child(4)...... */
+                :nth-last-child(2){}/* 选中任何元素的倒数第2个子元素 */
+                :nth-child(2n){}/* 选中任何元素的子元素中第2n个子结点（n从0开始） */
+                :nth-child(odd){}/* odd:奇数 */
+                :nth-child(even){}/* even:偶数 */
+                /* nth:第几个。1st,2nd,3rd,4th,5th...... */
+                :empty{}/* 选中内容为空（空格也不能有）的元素 */
+                :not(xxxx){}/* 选中不满足xxxx条件的元素，如:not(:empty){}、not(p){}、not(:first-child){}...... */
+            表单交互伪类
+            :checked{}/* 选中被check即勾上的表单元素,如<input type="checkbox">与<input type="radio">有样式:checked{ zoom:2; }那么勾选上时就会放大2倍 */
+            :enabled{}/* 选中被启用的表单元素 */
+            :disabled{}/* 选中禁用的表单元素 */
+            :valid{}/:invalid{}/* 选中填写正确/填写不正确的表单项，依赖于html自己的验证机制，限制太大，不常用 */
+            :required{}/:optional{}/* 选中必填/可选填的表单项 */
+
+            !!!!!!这些选择器选择的元素类别取决于最父级的选择器,或者说单词位置不同扮演的角色和起的作用不同,如:enabled{}只能选中表单元素且是被启用的“表单元素”,但:not(:enabled){}此时:enabled是条件而不是选择器,所以它选中了所有的被启用的“元素”
+
+
+
+
+
+    选择器的组合
+        层级选择器
+        空格层级A B C D E{}/* 满足A条件的元素的后代中满足条件B的元素的后代中满足条件C的元素的后代中满足D的元素的后代中满足E的元素 */
+        无缝衔接ABCDE{}/* 同时满足ABCDE所有条件的元素 */
+        组合选择器
+
+
+
+
         
