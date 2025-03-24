@@ -251,17 +251,53 @@ p{
 
 
         URL链接/相对路径
-        必须将链接/路径本体包在括号中且不能出现引号
-        url(xxx.ooo)
-        url(1643821.png)
-        url(xxxx://iowhdai/ihjeia)
-        url(xxxx://oe@server/pathname?a=b&c=d)
-        url(/zdfcawe/zdawe/zdawe.jpg)
-        相对路径相对于这句代码所在文件的所在文件夹
+            必须将链接/路径本体包在括号中且！！！！不能出现引号！！！！
+            url(xxx.ooo)
+            url(1643821.png)
+            url(xxxx://iowhdai/ihjeia)
+            url(xxxx://oe@server/pathname?a=b&c=d)
+            url(/zdfcawe/zdawe/zdawe.jpg)
+            相对路径相对于这句代码所在文件的所在文件夹
 
 
-        css关键字
-        
+        css关键字(非数值的属性值)
+            关键字如中文的"没有","不出现","显示","锁定"等提示状态的字眼一样,种类较少且不同选择器可写的关键字不同
+            不同选择器的关键字即使单词相同,呈现效果一般也天差地别
+            display: block;
+            display: none/block/inline/inline-block/table/table-cell ;
+            background-color: currentcolor;
+            font-size: inherit;/*inherit继承,从妈妈“她”肚子“里面”生出来的儿子会“继承”*/
+            border-style: solid/dotted/dashed/ridge;/*solid固体、实心的dotted斑点状、星罗棋布的dashed猛击、俯冲ridge隆起的、山脊状*/
+            none/*注意不是0，None和0从来都不能划等号*/
+            inherit/reset/initial/unset
+            属性接受了关键字,那么此关键字将被指定为此属性专门的关键字,与别的属性的关键字即使单词相同也互相独立毫不相干
+                letter-spacing: normal;
+                font-style: normal;
+                这两个normal的效果、意义及行为完全不一样
+
+
+        字符串(一串引号引起来的特殊内容)
+            content: 'ffoo\6211oo'  "sjdhiw  sndiw  -=dknaiwed"   "nskahe";/* content所容纳之物 */
+
+
+        取属性的值(一般是各种函数)
+            content: attr(href)/*attr--attrack指向*/
+            transform: rotate(30deg) skew(50deg) matrix(1,2,3,4,5,6...)/*skew歪斜matrix矩阵*/
+
+
+
+
+
+
+
+
+
+    字体
+
+
+
+
+
 
 
 
