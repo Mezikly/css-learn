@@ -179,9 +179,103 @@ p{
             色域---屏幕能显示颜色的范围
 
 
+            CMYK
+            像rgb,hsl,hsv(浏览器还不支持),都是自发光设备的颜色表示方法,而打印设备打印的纸张内容颜色需要外光源照射才能显示,所以有CMYK这种一般用在打印
+                设备的颜色表示方法(Cyan蓝绿色 magenta洋红色 yellow黄色 black黑色/墨色)
 
 
-                
+
+
+        布局
+
+        长度单位/绝对长度(不常用,各个显示器分辨率及配置不一导致不准确使得布局乱套,常用在打印时)
+            in(ch)英寸
+            cm
+            mm
+            pt point 七十二分之一inch
+            pc pica 六分之一inch
+
+
+        屏幕相关单位/相对长度单位
+            px(css像素,已成抽象单位,即预览仅供参考,按实际情况为准)
+                像素灯的大小随着科技or屏幕发展越来越小,屏幕设置的缩放选项实际上是将显示内容属性的像素长度缩放,否则将变为实际数量像素灯长度,将导致内容不便
+                浏览,一般按缩放比例转换后重新渲染,直接放大/缩小会存在锯齿等现象
+            em(当前定义元素尺寸单位) element's measurement
+                当前元素生效的(选中当前元素的优先级最高的选择器所写的)font-size的大小(像素)定义em单位
+                例如div{
+                    font-size: 100px;
+                    width: 2em;
+                    height: 3em;
+                       }中1em=100px
+            rem(根定义元素尺寸单位) root element's measurement
+                根元素的font-size大小定义rem单位,即html的font-size大小,html根标签的默认font-size是16px
+            vx
+                x字符的高度
+            ch
+                0字符的宽度
+            
+            
+            vw/vh
+                viewport width/height
+                1vw/vh=1*视口(整个网页/显示区域,包含滚动条)宽/高度的百分之一
+            
+            vmax/vmin
+                1vmax=max(1vw,1vh)二者取大
+                1vmin=min(1vw,1vh)二者取小
+            
+        计算值
+            calc(xxx + - * / ooo);/* xxx与ooo可以是纯数字/百分比/单位,十分灵活 */
+            例如wdith:calc(114vm - 514px);
+            wdith:calc(472em * 248 - 5%);
+            wdith:calc(248em * 374 / 24);
+            wdith:calc(247px + 89%);
+            ！！！运算符的两边一定要打空格
+
+        角度
+            deg degree角度
+            45deg 90deg
+            sin(pi/4)
+            rad弧度radian  pi=3.14rad=180deg  90deg=pi/2
+            turn圈数 1turn=360deg
+            transform:rotate(180deg);
+            transform:rotate(3.14rad)
+
+
+
+        时间
+        s秒 ms毫秒
+
+
+        频率
+        赫兹hz 每秒振动/变换次数
+
+
+        URL链接/相对路径
+        必须将链接/路径本体包在括号中且不能出现引号
+        url(xxx.ooo)
+        url(1643821.png)
+        url(xxxx://iowhdai/ihjeia)
+        url(xxxx://oe@server/pathname?a=b&c=d)
+        url(/zdfcawe/zdawe/zdawe.jpg)
+        相对路径相对于这句代码所在文件的所在文件夹
+
+
+        css关键字
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
             
             
 
