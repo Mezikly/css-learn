@@ -224,9 +224,9 @@ p{
                     font-size: 100px;
                     width: 2em;
                     height: 3em;
-                       }中1em=100px
+                       }中1em=100px,！！！注意此时若font-size写的值是像2em这样的计算式,那么font-size的em取的是这个标签父元素的font-size值,而width的em取的值则是此标签的font-size的计算值
             rem(根定义元素尺寸单位) root element's measurement
-                根元素的font-size大小定义rem单位,即html的font-size大小,html根标签的默认font-size是16px
+                根元素的font-size大小定义rem单位,即html根标签的font-size大小,html根标签的默认font-size是16px
             vx
                 x字符的高度
             ch
@@ -310,7 +310,52 @@ p{
 
 
 
+
+
     字体
+        font-family: 字体名, 备用字体名1, 备用字体名2......serif,monospace;/* 这个写法的字体一定得是用户端已经有的字体，显示内容不支持首选字体时往下排备用字体用 */serif表示衬线字体,在字的笔画开始
+            和结束的地方有额外的装饰,笔画的粗细也有所不同。与sans-Serif(非衬线字体)字体相比,Serif字体更容易识别,因为它们强调了每个字母笔画的开始和结束,从而提高了易读性‌
+            monospace等宽字体
+        font-weight:bold/light/border/lighter/normal;字重,为字体加粗/变细,也可以填精确数值设计粗细,字体最多设计100-900九种粗细(只有100的整数倍)
+        font-size:字体长度单位;
+            也有x-large、xx-large等写法但这些单词没有统一的精确的标准,所以避免使用。一般都使用48px,294em这些精确单位
+            也可写百分比,尽量避免,会和em一样出现标签嵌套时的错误叠加
+            综上,尽量直接指定px抽象像素值
+        font-style:italic/normal/oblique;斜体/正常/倾斜体/* italic是专门设计的一种斜体字，oblique则是将字体直接倾斜 */
+        font-variant:normal/small-caps;默认normal字体正常不变形,small-caps将小写字母变形成小号的大写字母,仅在显示层面变化
+        line-height:1/2/3;几倍行高
+        以上都可以将属性值写在一个font属性里,但不仅对书写顺序有要求,还将覆盖前面已经书写的以上属性(因为被视为了以上同名属性的叠加,同名属性在后面的优先级高),可能带来新的布局问题如寻找问题根源的困难所以不建议
+
+
+
+
+    文章与排版
+        缩进
+        text-indent:2em,文本首行缩进一定长度单位/百分比/负值(首行突进)
+                隐藏文字内容的一定方法:设置的负值足够小时(如-99999em)所有的内容都能被一容纳甚至隐藏在页面屏幕左边边界外(因为是往右边缩进,负值就是往左突进)
+        水平对齐
+        text-align:right/left/center/justify;/* justify调整使两端对齐/全行排齐，不会排齐最后一行，最后一行强行排齐用的是text-align-last：justify； */
+        垂直方向上的对齐(几乎不用)
+        vertival-align:super/top/bottom/middle/sub/23px/30px......
+            只能给块元素用,实际上是在竖直方向移动来进行对齐,移动时会将整一行的高度撑高
+        行高(几乎不用)
+        line-height:长度单位;文字在整一行居中,行高是每一行的高度,数值上等于每一行中线之间的距离或字号的2倍,一般设置了字号等就不另外设置行高,会影响字号
+        单词间隙(几乎不用)
+        word-spacing:长度单位;默认的单词间隙有一个空格,设置的数值会加上这个空格,所以一般不额外设置字间隙
+        字(母)间隙
+        letter-spacing:长度单位;
+
+        
+
+
+
+
+        
+
+
+        
+
+
 
 
 
