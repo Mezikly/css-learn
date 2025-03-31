@@ -339,11 +339,36 @@ p{
         vertival-align:super/top/bottom/middle/sub/23px/30px......
             只能给块元素用,实际上是在竖直方向移动来进行对齐,移动时会将整一行的高度撑高
         行高(几乎不用)
-        line-height:长度单位;文字在整一行居中,行高是每一行的高度,数值上等于每一行中线之间的距离或字号的2倍,一般设置了字号等就不另外设置行高,会影响字号
+        line-height:长度单位/倍数/百分比;文字在整一行居中,行高是每一行的高度,数值上等于每一行中线之间的距离或字号的2倍,一般设置了字号等就不另外设置行高,会影响字号
         单词间隙(几乎不用)
         word-spacing:长度单位;默认的单词间隙有一个空格,设置的数值会加上这个空格,所以一般不额外设置字间隙
         字(母)间隙
-        letter-spacing:长度单位;
+        letter-spacing:长度单位/...;
+        大小写转换
+        text-transform:uppercase/lowercase/capitalize/none; capitalize每个单词的首字母大写,none不转换默认怎么写怎么显示
+            此属性效果先于font-variant执行
+        文本效果
+        text-decoration:underline/overline/line-through 颜色 dotted;line-through划线删除 dotted点线
+            这条属性可以拆分成以下属性
+            text-decoration-line:;
+            text-decoration-color:;
+            text-decoration-thickness:;
+            text-decoration-style:;
+        元素阴影
+        box-shadow:水平偏移长度单位 垂直偏移长度单位 模糊半径长度单位 扩散半径长度单位 颜色；
+        文字阴影
+        text-shadow:水平偏移长度单位 垂直偏移长度单位 模糊半径长度单位 扩散半径长度单位 颜色；
+            可以打个逗号再写一组阴影如text-shadow:2px 2px 2px yellow, 4px 5px 1px blue,......
+            最多偏移500个像素,可写大量层数阴影实现“投影”效果,例如网站flow.org
+        处理空格与折行(https://developer.mozilla.org/zh_CN/docs/Web/CSS/white-space)(https://developer.mozilla.org/zh_CN/docs/Web/CSS/word-break)
+        white-space:nowrap/pre...; nowrep文本不折行 pre初始格式,有多少空格显示多少空格
+        word-break:......;
+
+        
+        
+            可在divtools查看各个属性值分别尝试效果
+
+
 
         
 
